@@ -1,0 +1,28 @@
+<app-pedido-formulario></app-pedido-formulario>
+
+<table>
+  <thead>
+    <th>Código</th>
+    <th>Descrição</th>
+    <th>Categoria</th>
+    <th>Valor (R$)</th>
+    <th>Taxas (R$)</th>
+    <th>Total (R$)</th>
+  </thead>
+  <tbody>
+    <tr *ngFor="let item of pedido?.itens" class="linha">
+      <td>{{ item.id | codigo }}</td>
+      <td>{{ item.descricao }}</td>
+      <td>{{ item.categoria }}</td>
+      <td>{{ item.valor | currency: "BRL" }}</td>
+      <td>{{ calcularTaxa(item) | currency: "BRL" }}</td>
+      <td>{{ calcularTotal(item) | currency: "BRL" }}</td>
+    </tr>
+  </tbody>
+  <tfoot class="footer">
+    <td colspan="3">Total</td>
+    <td>{{ subTotal | currency: "BRL" }}</td>
+    <td>{{ taxas | currency: "BRL" }}</td>
+    <td>{{ total | currency: "BRL" }}</td>
+  </tfoot>
+</table>
