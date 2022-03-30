@@ -27,8 +27,7 @@ export class PedidoListaComponent implements OnInit {
   public get taxas(): number {
     let taxa: number = 0;
     this.pedido.itens.forEach((item) => {
-      taxa = this.calcularTaxa(item);
-      taxa += item.valor;
+      taxa += this.calcularTaxa(item);
     });
     return taxa;
   }

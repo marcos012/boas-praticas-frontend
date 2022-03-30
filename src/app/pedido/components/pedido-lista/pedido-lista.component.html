@@ -20,9 +20,11 @@
     </tr>
   </tbody>
   <tfoot class="footer">
-    <td colspan="3">Total</td>
-    <td>{{ subTotal | currency: "BRL" }}</td>
-    <td>{{ taxas | currency: "BRL" }}</td>
-    <td>{{ total | currency: "BRL" }}</td>
+    <tr>
+      <td colspan="3">Total</td>
+      <td>{{ subTotal | currency: "BRL" }}</td>
+      <td>{{ taxas | currency: "BRL" }}</td>
+      <td>{{ total | currency: "BRL" }}</td>
+    </tr>
   </tfoot>
 </table>
